@@ -20,7 +20,10 @@
         "rxjs": "^7.8.0",
         "yargs": "^17.6.2"
     },
+    "repository": {
+        "url": "https://github.com/WebEferen/buildable.git"
+    },
     "publishConfig": {
-        "registry": "ttps://npm.pkg.github.com"
+        "registry": "https://npm.pkg.github.com"
     }
 }
