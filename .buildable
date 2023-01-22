@@ -1,0 +1,6 @@
+{
+    "readinessListeners": {
+        "tsc": "Watching for file changes",
+        "nodemon": "waiting for changes before restart"
+    }
+}
