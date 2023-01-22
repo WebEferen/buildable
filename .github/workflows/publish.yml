@@ -35,8 +35,13 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Build
-        run: npm run build
+      # When add typescript types uncomment
+      # - name: Build
+      #   run: npm run build
+
+      # Uncomment when tests will be added
+      # - name: Test
+      #   run: npm test
 
       - name: Publish
         run: npm publish
