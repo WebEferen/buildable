@@ -3,7 +3,10 @@
     "version": "1.0.0",
     "main": "lib/index.js",
     "type": "module",
-    "scripts": {},
+    "scripts": {
+        "init": "echo 'Init'",
+        "start": "node bin/buildable.js"
+    },
     "bin": {
         "buildable": "./bin/buildable.js"
     },
@@ -14,7 +17,6 @@
         "chalk": "5.2.0",
         "concurrently": "^7.6.0",
         "dependency-graph": "^0.11.0",
-        "dotenv": "^16.0.3",
         "rxjs": "^7.8.0",
         "yargs": "^17.6.2"
     }
