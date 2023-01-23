@@ -1,0 +1,9 @@
+{
+    "exclude": [],
+    "listeners": [
+        "Watching for file changes",
+        "waiting for changes before restart"
+    ],
+    "path": null,
+    "script": null
+}
