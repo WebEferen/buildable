@@ -5,5 +5,6 @@
         "waiting for changes before restart"
     ],
     "path": null,
-    "script": null
+    "script": null,
+    "verbose": false
 }
