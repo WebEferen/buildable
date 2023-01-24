@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "scripts": {
     "build": "buildable run \"npm run build\"",
-    "build:watch": "buildable run \"npm run watch\""
+    "build:watch": "buildable run \"npm run watch\"",
+    "dependency-graph": "buildable dependency-graph"
   },
   "devDependencies": {
     "@webeferen/buildable": "^0.6.1"
