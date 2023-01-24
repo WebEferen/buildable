@@ -23,7 +23,7 @@ jobs:
 
       - name: Install Dependencies
         if: steps.cache.outputs.cache-hit != 'true'
-        run: npm ci
+        run: npm install
 
   lint:
     name: Lint
@@ -36,7 +36,7 @@ jobs:
           node-version: "18.x"
           registry-url: "https://npm.pkg.github.com"
           cache: cache-node-modules
-      - run: npm ci
+      - run: npm install
       - run: npm run lint
 
   test:
@@ -50,5 +50,5 @@ jobs:
           node-version: "18.x"
           registry-url: "https://npm.pkg.github.com"
           cache: cache-node-modules
-      - run: npm ci
+      - run: npm install
       - run: npm run test
