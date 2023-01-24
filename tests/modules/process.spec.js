@@ -8,7 +8,7 @@ describe("ProcessManager", () => {
     jasmine
       .createSpy("concurrently", concurrently)
       .and.callFake(([command]) => {
-        expect(command.name).toBe("package-c");
+        expect(command.name).toBe("single-repo");
         expect(command.command).toBe(script);
 
         return { commands: [], result: [] };
