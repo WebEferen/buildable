@@ -1,10 +1,10 @@
 name: Publish Package
 on:
-  push:
+  workflow_dispatch:
     branches: [main]
 jobs:
-  build:
-    name: Build
+  publish:
+    name: Publish
     runs-on: ubuntu-latest
     permissions:
       packages: write
@@ -14,32 +14,8 @@ jobs:
         with:
           node-version: "18.x"
           registry-url: "https://npm.pkg.github.com"
-
-      - name: Cache node modules
-        id: cache-npm
-        uses: actions/cache@v3
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}-${{ hashFiles('**/package-lock.json') }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
-
-      - if: ${{ steps.cache-npm.outputs.cache-hit != 'true' }}
-        name: List the state of node modules
-        continue-on-error: true
-        run: npm list
-
-      - name: Install dependencies
-        run: npm install
-
-      - name: Test
-        run: npm test
-
-      - name: Publish
-        run: npm publish
+          cache: npm
+      - run: npm install
+      - run: npm publish
         env:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
