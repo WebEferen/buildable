@@ -9,13 +9,21 @@ jobs:
     name: 'Install Dependencies'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-      - uses: actions/setup-node@v3
+        uses: actions/cache@v3
+        id: cache-node-modules
+        env:
+          cache-name: cache-node-modules
         with:
-          node-version: "18.x"
-          registry-url: "https://npm.pkg.github.com"
-          cache: npm
-      - run: npm install
+          path: ~/.npm
+          key: ${{ runner.os }}-build-${{ env.cache-name }}
+          restore-keys: |
+            ${{ runner.os }}-build-${{ env.cache-name }
+            ${{ runner.os }}-build-
+            ${{ runner.os }}-
+
+      - name: Install Dependencies
+        if: steps.cache.outputs.cache-hit != 'true'
+        run: npm ci
 
   lint:
     name: Lint
@@ -27,8 +35,8 @@ jobs:
         with:
           node-version: "18.x"
           registry-url: "https://npm.pkg.github.com"
-          cache: npm
-      - run: npm install
+          cache: cache-node-modules
+      - run: npm ci
       - run: npm run lint
 
   test:
@@ -41,6 +49,6 @@ jobs:
         with:
           node-version: "18.x"
           registry-url: "https://npm.pkg.github.com"
-          cache: npm
-      - run: npm install
+          cache: cache-node-modules
+      - run: npm ci
       - run: npm run test
