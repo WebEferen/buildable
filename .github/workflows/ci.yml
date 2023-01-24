@@ -21,7 +21,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - run: npm install
+      - run: npm ci
 
   lint:
     name: Lint
@@ -37,7 +37,7 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - run: npm install
+      - run: npm ci
       - run: npm run lint
 
   test:
@@ -54,5 +54,5 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
           cache: "npm"
-      - run: npm install
+      - run: npm ci
       - run: npm run test
