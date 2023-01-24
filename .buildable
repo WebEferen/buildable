@@ -1,17 +1,6 @@
 {
-    "only": [],
-    "exclude": [],
-    "listeners": [
-        "Watching for file changes",
-        "waiting for changes before restart"
-    ],
-    "path": null,
-    "script": null,
-    "verbose": false,
-    "runner": null,
-    "customLoggers": {
-        "log": null,
-        "verbose": null,
-        "error": null
-    }
+  "listeners": [
+    "Watching for file changes",
+    "waiting for changes before restart"
+  ]
 }

@@ -1,6 +1,10 @@
 {
   "name": "package-b",
   "version": "1.0.0",
-  "scripts": {},
+  "main": "lib/index.js",
+  "scripts": {
+    "build": "echo \"Build\"",
+    "start": "node lib/index.js"
+  },
   "dependencies": {}
 }

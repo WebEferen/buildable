@@ -1,0 +1,36 @@
+{
+    // Run only selected packages (and their dependencies to be error-safe)
+    "only": [],
+    // Exclude packages from run
+    "exclude": [],
+    // Listeners for events printed in the console (to keep ordered builds)
+    // When the output matches given strings, next process is starting
+    "listeners": [
+        "Watching for file changes",
+        "waiting for changes before restart"
+    ],
+    // Relative path to the workspace packages directory (default: packages)
+    "path": null,
+    // Script name which should be run (is set via run <script> parameter)
+    "script": null,
+    // Aliases for the script runner (if there is need to run other named processes)
+    // Initial script command is taken as a key command
+    // If the command matches the key, script searches for corresponding package command
+    // If the package command is not present, the keyed command is used
+    // Package name (package.json name) as the key and as the value command which should be run.
+    "customCommands": {
+        "npm run start": {
+            "package-a": "npm run start-alias"
+        }
+    },
+    // Enable verbose logging
+    "verbose": false,
+    // Custom runner (default: concurrently)
+    "runner": null,
+    // Custom loggers (default: console.*)
+    "customLoggers": {
+        "log": null,
+        "verbose": null,
+        "error": null
+    }
+}

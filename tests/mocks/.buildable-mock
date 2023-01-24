@@ -1,4 +1,9 @@
 {
     "script": "test",
-    "exclude": ["test"]
+    "exclude": ["test"],
+    "customCommands": {
+        "npm run mock": {
+            "package-a": "npm run mock-alias"
+        }
+    }
 }
