@@ -1,47 +1,90 @@
-# Buildable - Monorepo CLI
+# Buildable
 
-Running internal command:
+![Publish package](https://github.com/webeferen/buildable/actions/workflows/publish.yml/badge.svg?branch=main)
 
-> npm run buildable help
+Link your local repositories and dependencies quickly, without any additional knowledge.
 
-Or install package globally using:
+## Installation
 
-> npm install -g @webeferen/buildable
+Buildable is made to work with each of installation type such as local, global and npx.
 
-... and then just use:
+Local scope
 
-> buildable help
+```bash
+npm install --save-dev @webeferen/buildable
+```
 
-## Available commands
+Global scope
 
-### Buildable Help
+```bash
+npm install --global @webeferen/buildable
+```
 
-Command that prints out help page with commands and options.
+It can be also used via npx
 
-> buildable help
+```bash
+npx @webeferen/buildable [command]
+```
 
-### Buildable Dependency Graph
+## Usage
 
-Command that prints out dependency graph.
+```bash
+buildable [command] (...options)
+```
 
-> buildable dependency-graph
+### Help & Version
 
-### Buildable Execution Order
+This command prints out useful information such as available commands and options.
 
-Command that prints execution order in which the scripts will be run.
+```bash
+buildable help
+```
 
-> buildable execution-order
+Prints out currently used version of the package
 
-## Available options
+```bash
+buildable --version
+```
 
-> --exclude package1,package2
+### Run Script
 
-List of excluded packages from the builder
+This command runs specified command for **each project** inside directory.
 
-> --path path
+```bash
+buildable run (r) "script name" (...options)
+```
 
-Path to the packages folder in which buildable searches for package.json(s)
+### Dependency Graph
 
-> --only package
+This command generates dependency graph with every dependency inside workspace (linking them with correct versions). Graph only shows relations between local dependencies.
 
-Runs only the specified package with it's dependencies.
+```bash
+buildable dependency-graph (dg) (...options)
+```
+
+### Execution Order
+
+This command generates execution order in which projects should be run to avoid build order issues. It only takes into consideration local dependencies.
+
+```bash
+buildable execution-order (eo) (...options)
+```
+
+#### Available options
+
+* `--listeners (-l)` List of comma separated texts when achieve next process can be run (regex check)
+* `--only (-o)` List of comma separated projects that will only be run (with their dependencies)
+* `--exclude (-e)` List of comma separated packages which should be excluded
+* `--path (-p)` Relative path to the directory containing workspace (if any)
+* `--config (-c)` Relative path to the configuration file
+
+## Contributing
+
+Pull requests are welcome. For major changes, please open an issue first
+to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+
+[MIT](https://choosealicense.com/licenses/mit/)
