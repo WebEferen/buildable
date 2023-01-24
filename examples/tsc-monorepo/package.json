@@ -1,7 +1,13 @@
 {
   "name": "tsc-monorepo",
   "version": "1.0.0",
-  "scripts": {},
+  "scripts": {
+    "build": "buildable run \"npm run build\"",
+    "start": "buildable run \"npm run start\""
+  },
+  "devDependencies": {
+    "@webeferen/buildable": "^0.6.1"
+  },
   "workspaces": [
     "packages/*"
   ]

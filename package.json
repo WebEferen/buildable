@@ -1,12 +1,11 @@
 {
   "name": "@webeferen/buildable",
   "description": "Monorepo linking tool on steroids.",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "main": "lib/index.js",
   "type": "module",
   "scripts": {
-    "start": "node bin/buildable.js",
-    "test": "jasmine --config=jasmine.json",
+    "test": "node bin/buildable.js run \"jasmine --config=jasmine.json\"",
     "format": "prettier . --write",
     "lint": "prettier . --check"
   },
