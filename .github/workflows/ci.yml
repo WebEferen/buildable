@@ -6,10 +6,10 @@ on:
 
 jobs:
   install:
-    name: 'Install Dependencies'
+    name: Install Dependencies
     runs-on: ubuntu-latest
     steps:
-        uses: actions/cache@v3
+      - uses: actions/cache@v3
         id: cache-node-modules
         env:
           cache-name: cache-node-modules
