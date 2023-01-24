@@ -1,54 +1,59 @@
 name: CI
 
 on:
+  push:
+    branches: [ "main" ]
   pull_request:
+    branches: [ "main" ]
   workflow_dispatch:
 
 jobs:
   install:
-    name: Install Dependencies
+    name: Install dependencies
     runs-on: ubuntu-latest
-    steps:
-      - uses: actions/cache@v3
-        id: cache-node-modules
-        env:
-          cache-name: cache-node-modules
-        with:
-          path: ~/.npm
-          key: ${{ runner.os }}-build-${{ env.cache-name }}
-          restore-keys: |
-            ${{ runner.os }}-build-${{ env.cache-name }}-
-            ${{ runner.os }}-build-
-            ${{ runner.os }}-
+    strategy:
+      matrix:
+        node-version: [16.x, 18.x]
 
-      - name: Install Dependencies
-        if: steps.cache.outputs.cache-hit != 'true'
-        run: npm install
+    steps:
+    - uses: actions/checkout@v3
+    - uses: actions/setup-node@v3
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    - run: npm install
 
   lint:
-    name: Lint
-    needs: install
-    runs-on: ubuntu-latest
-    steps:
+      name: Lint
+      needs: install
+      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          node-version: [16.x, 18.x]
+
+      steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: "18.x"
-          registry-url: "https://npm.pkg.github.com"
-          cache: cache-node-modules
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
       - run: npm install
       - run: npm run lint
 
   test:
-    name: Test
-    needs: lint
-    runs-on: ubuntu-latest
-    steps:
+      name: Test
+      needs: lint
+      runs-on: ubuntu-latest
+      strategy:
+        matrix:
+          node-version: [16.x, 18.x]
+
+      steps:
       - uses: actions/checkout@v3
       - uses: actions/setup-node@v3
         with:
-          node-version: "18.x"
-          registry-url: "https://npm.pkg.github.com"
-          cache: cache-node-modules
+          node-version: ${{ matrix.node-version }}
+          cache: 'npm'
       - run: npm install
       - run: npm run test
+    
