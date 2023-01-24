@@ -1,5 +1,5 @@
-import { test } from 'package-b';
+import { test } from "package-b";
 
 export default () => {
-    console.log(test);
+  console.log(test);
 };
