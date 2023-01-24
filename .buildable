@@ -1,4 +1,5 @@
 {
+    "only": [],
     "exclude": [],
     "listeners": [
         "Watching for file changes",

@@ -6,9 +6,11 @@ describe('Options', () => {
 
         expect(options.getPath()).toContain('packages');
         expect(options.getScript()).toBeNull();
-   
+
+        expect(options.getOnly().length).toBe(0);
         expect(options.getListeners().length).toBe(4);
         expect(options.getExcluded().length).toBe(0);
+
         expect(options.getCustomLoggers()).toEqual({
             log: null,
             verbose: null,
