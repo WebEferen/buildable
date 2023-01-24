@@ -4,6 +4,15 @@
 
 Link your local repositories and dependencies quickly, without any additional knowledge.
 
+- [Installation](#installation)
+- [Usage](#usage)
+  - [Help & Version](#help)
+  - [Run Script](#run-script)
+  - [Dependency Graph](#dependency-graph)
+  - [Execution Order](#execution-order)
+- [Contributing](#contributing)
+- [License](#license)
+
 ## Installation
 
 Buildable is made to work with each of installation type such as local, global and npx.
@@ -32,7 +41,7 @@ npx @webeferen/buildable [command]
 buildable [command] (...options)
 ```
 
-### Help & Version
+### Help
 
 This command prints out useful information such as available commands and options.
 
@@ -72,11 +81,11 @@ buildable execution-order (eo) (...options)
 
 #### Available options
 
-* `--listeners (-l)` List of comma separated texts when achieve next process can be run (regex check)
-* `--only (-o)` List of comma separated projects that will only be run (with their dependencies)
-* `--exclude (-e)` List of comma separated packages which should be excluded
-* `--path (-p)` Relative path to the directory containing workspace (if any)
-* `--config (-c)` Relative path to the configuration file
+- `--listeners (-l)` List of comma separated texts when achieve next process can be run (regex check)
+- `--only (-o)` List of comma separated projects that will only be run (with their dependencies)
+- `--exclude (-e)` List of comma separated packages which should be excluded
+- `--path (-p)` Relative path to the directory containing workspace (if any)
+- `--config (-c)` Relative path to the configuration file
 
 ## Contributing
 
