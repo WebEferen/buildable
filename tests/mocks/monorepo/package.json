@@ -1,6 +1,8 @@
 {
-    "name": "monorepo",
-    "version": "1.0.0",
-    "scripts": {},
-    "workspaces": ["packages/*"]
+  "name": "monorepo",
+  "version": "1.0.0",
+  "scripts": {},
+  "workspaces": [
+    "packages/*"
+  ]
 }

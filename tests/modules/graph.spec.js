@@ -1,72 +1,75 @@
-import { CliOptions } from '../../lib/modules/options.js';
-import { DependencyGraph } from '../../lib/modules/graph.js';
+import { CliOptions } from "../../lib/modules/options.js";
+import { DependencyGraph } from "../../lib/modules/graph.js";
 
-describe('DependencyGraph', () => {
-    it('should not find package with wrong path', async () => {
-        const options = new CliOptions({ path: '/not/existing', customLoggers: { error: (..._) => {}} });
-        const graph = new DependencyGraph(options);
-
-        await graph.findPackages();
-        const { packages } = graph.getGraph();
-
-        expect(packages.length).toBe(0);
+describe("DependencyGraph", () => {
+  it("should not find package with wrong path", async () => {
+    const options = new CliOptions({
+      path: "/not/existing",
+      customLoggers: { error: (..._) => {} },
     });
+    const graph = new DependencyGraph(options);
 
-    it('Should find packages within monorepo path', async () => {
-        const options = new CliOptions({ path: 'tests/mocks/monorepo' });
-        const graph = new DependencyGraph(options);
+    await graph.findPackages();
+    const { packages } = graph.getGraph();
 
-        await graph.findPackages();
-        const { packages } = graph.getGraph();
+    expect(packages.length).toBe(0);
+  });
 
-        expect(packages.length).toBe(2);
-    });
+  it("Should find packages within monorepo path", async () => {
+    const options = new CliOptions({ path: "tests/mocks/monorepo" });
+    const graph = new DependencyGraph(options);
 
-    it('Should find packages within single-repo path', async () => {
-        const options = new CliOptions({ path: 'tests/mocks/monorepo' });
-        const graph = new DependencyGraph(options);
+    await graph.findPackages();
+    const { packages } = graph.getGraph();
 
-        await graph.findPackages();
-        const { packages } = graph.getGraph();
+    expect(packages.length).toBe(2);
+  });
 
-        expect(packages.length).toBe(2);
-    });
+  it("Should find packages within single-repo path", async () => {
+    const options = new CliOptions({ path: "tests/mocks/monorepo" });
+    const graph = new DependencyGraph(options);
 
-    it('Should not have execution order before generation', async () => {
-        const options = new CliOptions({ path: 'tests/mocks/monorepo' });
-        const graph = new DependencyGraph(options);
+    await graph.findPackages();
+    const { packages } = graph.getGraph();
 
-        await graph.findPackages();
-        const { order } = graph.getGraph();
+    expect(packages.length).toBe(2);
+  });
 
-        expect(order.length).toBe(0);
-    });
+  it("Should not have execution order before generation", async () => {
+    const options = new CliOptions({ path: "tests/mocks/monorepo" });
+    const graph = new DependencyGraph(options);
 
-    it('Should have correct execution order after generation', async () => {
-        const options = new CliOptions({ path: 'tests/mocks/monorepo' });
-        const graph = new DependencyGraph(options);
+    await graph.findPackages();
+    const { order } = graph.getGraph();
 
-        await graph.findPackages();
-        await graph.generate();
+    expect(order.length).toBe(0);
+  });
 
-        const { order } = graph.getGraph();
-        const names = order.map(order => order.name);
+  it("Should have correct execution order after generation", async () => {
+    const options = new CliOptions({ path: "tests/mocks/monorepo" });
+    const graph = new DependencyGraph(options);
 
-        expect(names.length).toBe(2);
-        expect(names).toEqual(['package-b', 'package-a']);
-    });
+    await graph.findPackages();
+    await graph.generate();
 
-    it('Should have correct dependencies', async () => {
-        const options = new CliOptions({ path: 'tests/mocks/monorepo' });
-        const graph = new DependencyGraph(options);
+    const { order } = graph.getGraph();
+    const names = order.map((order) => order.name);
 
-        await graph.findPackages();
-        await graph.generate();
+    expect(names.length).toBe(2);
+    expect(names).toEqual(["package-b", "package-a"]);
+  });
 
-        const { dependencies } = graph.getGraph();
-        const deps = Object.keys(dependencies);
+  it("Should have correct dependencies", async () => {
+    const options = new CliOptions({ path: "tests/mocks/monorepo" });
+    const graph = new DependencyGraph(options);
 
-        expect(deps.length).toBe(2);
-        expect(deps).toEqual(['package-a', 'package-b']);
-    });
+    await graph.findPackages();
+    await graph.generate();
+
+    const { dependencies } = graph.getGraph();
+    const deps = Object.keys(dependencies);
+
+    expect(deps.length).toBe(2);
+    expect(deps).toEqual(["package-a", "package-b"]);
+  });
 });

@@ -1,80 +1,99 @@
-import chalk from 'chalk';
+import chalk from "chalk";
 
-import { CliOptions } from '../../lib/modules/options.js';
-import { Logger } from '../../lib/modules/logger.js';
+import { CliOptions } from "../../lib/modules/options.js";
+import { Logger } from "../../lib/modules/logger.js";
 
-describe('Logger', () => {
+describe("Logger", () => {
+  it("should log message", () => {
+    const logSpy = (message) => message;
 
-    it('should log message', () => {
-        const logSpy = (message) => message;
-
-        const options = new CliOptions({ customLoggers: {
-            log: (message) => logSpy(message)
-        } });
-
-        const logger = new Logger(options);
-        expect(logger.log('Test')).toBe('Test');
+    const options = new CliOptions({
+      customLoggers: {
+        log: (message) => logSpy(message),
+      },
     });
 
-    it('should log with prefix', () => {
-        const logSpy = (message) => message;
+    const logger = new Logger(options);
+    expect(logger.log("Test")).toBe("Test");
+  });
 
-        const options = new CliOptions({ customLoggers: {
-            log: (message) => logSpy(message)
-        } });
+  it("should log with prefix", () => {
+    const logSpy = (message) => message;
 
-        const logger = new Logger(options);
-        expect(logger.log('Test', 'Prefix')).toBe('Prefix Test');
+    const options = new CliOptions({
+      customLoggers: {
+        log: (message) => logSpy(message),
+      },
     });
 
-    it('should verbose log message', () => {
-        const logSpy = (message) => message;
+    const logger = new Logger(options);
+    expect(logger.log("Test", "Prefix")).toBe("Prefix Test");
+  });
 
-        const options = new CliOptions({ verbose: true, customLoggers: {
-            verbose: (message) => logSpy(message)
-        } });
+  it("should verbose log message", () => {
+    const logSpy = (message) => message;
 
-        const logger = new Logger(options);
-        const verboseText = logger.format('[Verbose]', 'yellow');
-
-        expect(logger.verbose('Test')).toBe(`${verboseText} Test`);
+    const options = new CliOptions({
+      verbose: true,
+      customLoggers: {
+        verbose: (message) => logSpy(message),
+      },
     });
 
-    it('should error log message', () => {
-        const logSpy = (message) => message;
+    const logger = new Logger(options);
+    const verboseText = logger.format("[Verbose]", "yellow");
 
-        const options = new CliOptions({ verbose: true, customLoggers: {
-            error: (message) => logSpy(message)
-        } });
+    expect(logger.verbose("Test")).toBe(`${verboseText} Test`);
+  });
 
-        const logger = new Logger(options);
-        expect(logger.error('Test')).toBe(logger.format(`Test`, 'red'));
+  it("should error log message", () => {
+    const logSpy = (message) => message;
+
+    const options = new CliOptions({
+      verbose: true,
+      customLoggers: {
+        error: (message) => logSpy(message),
+      },
     });
 
-    it('should error with prefix', () => {
-        const logSpy = (message) => message;
+    const logger = new Logger(options);
+    expect(logger.error("Test")).toBe(logger.format(`Test`, "red"));
+  });
 
-        const options = new CliOptions({ verbose: true, customLoggers: {
-            error: (message) => logSpy(message)
-        } });
+  it("should error with prefix", () => {
+    const logSpy = (message) => message;
 
-        const logger = new Logger(options);
-        expect(logger.error('Test', 'Prefix')).toBe(logger.format(`Prefix Test`, 'red'));
+    const options = new CliOptions({
+      verbose: true,
+      customLoggers: {
+        error: (message) => logSpy(message),
+      },
     });
 
-    it('should error with gray color', () => {
-        const logSpy = (message) => message;
+    const logger = new Logger(options);
+    expect(logger.error("Test", "Prefix")).toBe(
+      logger.format(`Prefix Test`, "red")
+    );
+  });
 
-        const options = new CliOptions({ verbose: true, customLoggers: {
-            error: (message) => logSpy(message)
-        } });
+  it("should error with gray color", () => {
+    const logSpy = (message) => message;
 
-        const logger = new Logger(options);
-        expect(logger.error('Test', 'Prefix', 'gray')).toBe(logger.format(`Prefix Test`, 'gray'));
+    const options = new CliOptions({
+      verbose: true,
+      customLoggers: {
+        error: (message) => logSpy(message),
+      },
     });
 
-    it('should format message', () => {
-        const logger = new Logger();
-        expect(logger.format('Test', 'gray')).toBe(chalk.gray('Test'));
-    });
+    const logger = new Logger(options);
+    expect(logger.error("Test", "Prefix", "gray")).toBe(
+      logger.format(`Prefix Test`, "gray")
+    );
+  });
+
+  it("should format message", () => {
+    const logger = new Logger();
+    expect(logger.format("Test", "gray")).toBe(chalk.gray("Test"));
+  });
 });
