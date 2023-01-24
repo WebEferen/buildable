@@ -1,5 +1,6 @@
 # Buildable
 
+![CI](https://github.com/webeferen/buildable/actions/workflows/ci.yml/badge.svg?branch=main)
 ![Publish package](https://github.com/webeferen/buildable/actions/workflows/publish.yml/badge.svg?branch=main)
 
 Link your local repositories and dependencies quickly, without any additional knowledge.
