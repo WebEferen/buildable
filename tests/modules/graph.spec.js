@@ -16,7 +16,7 @@ describe("DependencyGraph", () => {
   });
 
   it("Should find packages within monorepo path", async () => {
-    const options = new CliOptions({ path: "tests/mocks/monorepo" });
+    const options = new CliOptions({ path: "examples/monorepo" });
     const graph = new DependencyGraph(options);
 
     await graph.findPackages();
@@ -26,7 +26,7 @@ describe("DependencyGraph", () => {
   });
 
   it("Should find packages within single-repo path", async () => {
-    const options = new CliOptions({ path: "tests/mocks/monorepo" });
+    const options = new CliOptions({ path: "examples/monorepo" });
     const graph = new DependencyGraph(options);
 
     await graph.findPackages();
@@ -36,7 +36,7 @@ describe("DependencyGraph", () => {
   });
 
   it("Should not have execution order before generation", async () => {
-    const options = new CliOptions({ path: "tests/mocks/monorepo" });
+    const options = new CliOptions({ path: "examples/monorepo" });
     const graph = new DependencyGraph(options);
 
     await graph.findPackages();
@@ -46,7 +46,7 @@ describe("DependencyGraph", () => {
   });
 
   it("Should have correct execution order after generation", async () => {
-    const options = new CliOptions({ path: "tests/mocks/monorepo" });
+    const options = new CliOptions({ path: "examples/monorepo" });
     const graph = new DependencyGraph(options);
 
     await graph.findPackages();
@@ -60,7 +60,7 @@ describe("DependencyGraph", () => {
   });
 
   it("Should have correct dependencies", async () => {
-    const options = new CliOptions({ path: "tests/mocks/monorepo" });
+    const options = new CliOptions({ path: "examples/monorepo" });
     const graph = new DependencyGraph(options);
 
     await graph.findPackages();

@@ -1,0 +1,16 @@
+{
+  "name": "package-a",
+  "version": "1.0.0",
+  "main": "dist/index.js",
+  "typings": "dist/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "watch": "tsc --watch"
+  },
+  "dependencies": {
+    "package-b": "*"
+  },
+  "devDependencies": {
+    "typescript": "4.9.4"
+  }
+}

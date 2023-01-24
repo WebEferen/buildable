@@ -25,7 +25,7 @@ describe("ProcessManager", () => {
 
     const concurrentlySpy = createConcurrentlySpy(script);
     const options = new CliOptions({
-      path: "tests/mocks/single-repo",
+      path: "examples/single-repo",
       script: script,
       runner: createRunnerMock(concurrentlySpy),
       customLoggers: { log: loggerMock },
