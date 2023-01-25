@@ -1,6 +1,7 @@
 {
   "listeners": [
     "Watching for file changes",
-    "waiting for changes before restart"
+    "waiting for changes before restart",
+    "Listening at http:"
   ]
 }
