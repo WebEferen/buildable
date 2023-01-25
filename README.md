@@ -92,6 +92,7 @@ buildable execution-order (eo) (...options)
 ## Possible issues
 
 There were some cases where buildable was not able to kill child process by itself. If that happens, this command might help to clean the ports up:
+
 ```bash
 kill -9 $(lsof -ti:[port])
 ```
