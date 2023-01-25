@@ -4,6 +4,7 @@
   - parser
   - listener
 - Cover new methods in:
+
   - process
   - options
 
@@ -13,4 +14,3 @@
   - global add [option] [value]
   - global remove [option] [value]
   - global list [option]
-  
