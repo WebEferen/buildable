@@ -89,6 +89,14 @@ buildable execution-order (eo) (...options)
 - `--config (-c)` Relative path to the configuration file
 - `--reload (-r)` List of comma separated packages which can be manually reloaded
 
+## Possible issues
+
+There were some cases where buildable was not able to kill child process by itself. If that happens, this command might help to clean the ports up:
+
+```bash
+kill -9 $(lsof -ti:[port])
+```
+
 ## Contributing
 
 Pull requests are welcome. For major changes, please open an issue first
