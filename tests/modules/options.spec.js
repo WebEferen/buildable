@@ -8,7 +8,7 @@ describe("Options", () => {
     expect(options.getScript()).toBeNull();
 
     expect(options.getOnly().length).toBe(0);
-    expect(options.getListeners().length).toBe(4);
+    expect(options.getListeners().length).toBe(6);
     expect(options.getExcluded().length).toBe(0);
 
     expect(options.getCustomLoggers()).toEqual({
