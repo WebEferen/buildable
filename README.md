@@ -87,6 +87,7 @@ buildable execution-order (eo) (...options)
 - `--exclude (-e)` List of comma separated packages which should be excluded
 - `--path (-p)` Relative path to the directory containing workspace (if any)
 - `--config (-c)` Relative path to the configuration file
+- `--reload (-r)` List of comma separated packages which can be manually reloaded
 
 ## Contributing
 

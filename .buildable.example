@@ -32,5 +32,7 @@
         "log": null,
         "verbose": null,
         "error": null
-    }
+    },
+    // Packages which can be manually reloaded (using interactive actions)
+    "reload": []
 }
