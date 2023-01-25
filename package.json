@@ -14,11 +14,11 @@
     "linking",
     "package.json"
   ],
-  "version": "0.9.3",
+  "version": "0.9.4",
   "main": "lib/index.js",
   "type": "module",
   "scripts": {
-    "test": "node bin/buildable.js run \"jasmine --config=jasmine.json\"",
+    "test": "jasmine --config=jasmine.json",
     "format": "prettier . --write",
     "lint": "prettier . --check"
   },
