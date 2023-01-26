@@ -3,5 +3,10 @@
     "Watching for file changes",
     "waiting for changes before restart",
     "Listening at http:"
-  ]
+  ],
+  "customCommands": {
+    "install": {
+      "*": "npm i"
+    }
+  }
 }
