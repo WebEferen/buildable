@@ -6,7 +6,7 @@ describe("Options", () => {
     const { path, script, only, listeners, exclude, customLoggers } =
       options.getOptions();
 
-    expect(path).toBeNull();
+    expect(path).toBe("packages");
     expect(script).toBeNull();
 
     expect(only.length).toBe(0);
