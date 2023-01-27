@@ -1,0 +1,11 @@
+{
+  "name": "multi-repo",
+  "version": "1.0.0",
+  "scripts": {
+    "postinstall": "buildable install --no-workspace",
+    "build": "buildable run \"npm run build\" --no-workspace"
+  },
+  "devDependencies": {
+    "@webeferen/buildable": "^0.6.1"
+  }
+}

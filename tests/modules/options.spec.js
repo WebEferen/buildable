@@ -3,15 +3,17 @@ import { CliOptions } from "../../lib/modules/options.js";
 describe("Options", () => {
   it("should use default configuration", () => {
     const options = new CliOptions();
+    const { path, script, only, listeners, exclude, customLoggers } =
+      options.getOptions();
 
-    expect(options.getPath()).toContain("packages");
-    expect(options.getScript()).toBeNull();
+    expect(path).toBe("packages");
+    expect(script).toBeNull();
 
-    expect(options.getOnly().length).toBe(0);
-    expect(options.getListeners().length).toBe(6);
-    expect(options.getExcluded().length).toBe(0);
+    expect(only.length).toBe(0);
+    expect(listeners.length).toBe(6);
+    expect(exclude.length).toBe(0);
 
-    expect(options.getCustomLoggers()).toEqual({
+    expect(customLoggers).toEqual({
       log: null,
       verbose: null,
       error: null,
@@ -20,19 +22,21 @@ describe("Options", () => {
 
   it("should load configuration", () => {
     const options = new CliOptions({ config: "tests/mocks/.buildable-mock" });
+    const { script, exclude, runner } = options.getOptions();
 
-    expect(options.getScript()).toBe("test");
-    expect(options.getExcluded().length).toBe(1);
+    expect(script).toBe("test");
+    expect(exclude.length).toBe(1);
 
-    const { executable, options: runnerOptions } = options.getRunner();
+    const { executable, options: runnerOptions } = runner;
     expect(runnerOptions).toBeDefined();
     expect(executable).not.toBeNull();
   });
 
   it("should not load configuration", () => {
     const options = new CliOptions({ config: "tests/mocks/.not-existing" });
+    const { script, exclude } = options.getOptions();
 
-    expect(options.getScript()).toBeNull();
-    expect(options.getExcluded().length).toBe(0);
+    expect(script).toBeNull();
+    expect(exclude.length).toBe(0);
   });
 });
