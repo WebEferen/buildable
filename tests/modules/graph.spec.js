@@ -30,7 +30,10 @@ describe("DependencyGraph", () => {
   });
 
   it("Should not have execution order before generation", async () => {
-    const options = new CliOptions({ path: "examples/monorepo", workspace: false });
+    const options = new CliOptions({
+      path: "examples/monorepo",
+      workspace: false,
+    });
     const graph = new DependencyGraph(options);
     const { order } = await graph.generate();
 
