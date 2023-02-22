@@ -20,8 +20,10 @@ jobs:
           node-version: "18.x"
           cache: "pnpm"
           registry-url: "https://npm.pkg.github.com"
+
       - name: Install dependencies
-        run: pnpm install
+        run: pnpm install --frozen-lockfile
+
       - name: Publish
         run: pnpm publish
         env:
