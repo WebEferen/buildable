@@ -20,6 +20,8 @@ jobs:
         with:
           node-version: 18
           cache: "pnpm"
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NODE_AUTH_TOKEN }}
 
       - name: Publish
         run: pnpm publish
