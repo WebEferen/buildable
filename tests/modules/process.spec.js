@@ -2,7 +2,6 @@ import { concurrently } from "concurrently";
 import { CliOptions } from "../../lib/modules/options.js";
 import { ProcessManager } from "../../lib/modules/process.js";
 import { DependencyGraph } from "../../lib/modules/graph.js";
-import { Finder } from "../../lib/modules/finder.js";
 
 describe("ProcessManager", () => {
   const createConcurrentlySpy = (script) =>
@@ -34,10 +33,8 @@ describe("ProcessManager", () => {
 
     const graph = new DependencyGraph(options);
     const manager = new ProcessManager(options);
-    graph.setPackages(await new Finder(options).findPackages());
-    graph.generate();
 
-    const { order, dependencies } = graph.getGraph();
+    const { order, dependencies } = await graph.generate();
     manager.setExecutions(order, dependencies);
     manager.spawn();
   });
