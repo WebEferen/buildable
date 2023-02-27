@@ -1,6 +1,6 @@
 {
   "name": "@webeferen/buildable",
-  "description": "Monorepo linking tool on steroids.",
+  "description": "Workspace linking tool on steroids.",
   "keywords": [
     "install",
     "build",
@@ -9,12 +9,14 @@
     "incremental",
     "package manager",
     "monorepo",
+    "workspace",
     "multirepo",
     "tool",
     "linking",
-    "package.json"
+    "package.json",
+    "pnpm"
   ],
-  "version": "0.10.0",
+  "version": "0.11.0",
   "main": "lib/index.js",
   "type": "module",
   "scripts": {
@@ -38,6 +40,7 @@
     "glob": "^8.1.0",
     "rxjs": "^7.8.0",
     "update-notifier": "^6.0.2",
+    "yaml": "^2.2.1",
     "yargs": "^17.6.2"
   },
   "peerDependencies": {
