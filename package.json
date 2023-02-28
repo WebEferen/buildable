@@ -16,7 +16,7 @@
     "package.json",
     "pnpm"
   ],
-  "version": "0.13.0",
+  "version": "1.0.0",
   "main": "lib/index.js",
   "type": "module",
   "scripts": {
@@ -25,12 +25,12 @@
     "lint": "prettier . --check"
   },
   "bin": {
-    "buildable": "./bin/buildable.js"
+    "buildable": "bin/buildable.js"
   },
   "author": "Michal Makowski",
   "license": "MIT",
   "repository": {
-    "url": "https://github.com/WebEferen/buildable.git"
+    "url": "git+https://github.com/WebEferen/buildable.git"
   },
   "dependencies": {
     "@manypkg/get-packages": "^1.1.3",
@@ -49,5 +49,14 @@
   "devDependencies": {
     "jasmine": "^4.5.0",
     "prettier": "^2.8.3"
+  },
+  "bugs": {
+    "url": "https://github.com/WebEferen/buildable/issues"
+  },
+  "homepage": "https://github.com/WebEferen/buildable#readme",
+  "directories": {
+    "example": "examples",
+    "lib": "lib",
+    "test": "tests"
   }
 }
