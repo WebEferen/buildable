@@ -90,6 +90,10 @@ buildable execution-order (eo) (...options)
 - `--config (-c)` Relative path to the configuration file
 - `--reload (-r)` List of comma separated packages which can be manually reloaded
 
+## Example configuration
+
+Example configuration can be found [here](EXAMPLE.md).
+
 ## Possible issues
 
 There were some cases where buildable was not able to kill child process by itself. If that happens, this command might help to clean the ports up:
