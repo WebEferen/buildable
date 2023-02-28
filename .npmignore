@@ -1,1 +1,7 @@
 .npmrc
+.gitignore
+.prettierignore
+jasmine.json
+
+examples
+tests
