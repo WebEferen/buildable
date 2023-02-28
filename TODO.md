@@ -16,5 +16,3 @@
 - Add **local** command to set local configuration with the same options as global.
 
   - local add exclude XYZ
-
-- Add **init** command to set the default .buldable configuration (local).
