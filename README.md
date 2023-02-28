@@ -2,6 +2,7 @@
 
 ![CI](https://github.com/webeferen/buildable/actions/workflows/ci.yml/badge.svg?branch=main)
 ![Publish package](https://github.com/webeferen/buildable/actions/workflows/publish.yml/badge.svg?branch=main)
+[![Npm Version](https://badge.fury.io/js/@webeferen%2Fbuildable.svg)](https://badge.fury.io/js/@webeferen%2Fbuildable)
 
 Link your local repositories and dependencies quickly, without any additional knowledge.
 
