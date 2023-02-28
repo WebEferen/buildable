@@ -11,6 +11,8 @@ Link your local repositories and dependencies quickly, without any additional kn
 - [Getting Started](#getting-started)
 - [Commands](#commands)
   - [Help & Version](#help)
+  - [Init](#init)
+  - [Install](#install)
   - [Run Script](#run-script)
   - [Dependency Graph](#dependency-graph)
   - [Execution Order](#execution-order)
@@ -71,6 +73,22 @@ Prints out currently used version of the package
 buildable --version
 ```
 
+### Init
+
+This command generates configuration files which allows modifications to be applied. It will also generate `pnpm-workspaces.yaml` file if `workspace` flag is set to true.
+
+```bash
+buildable init (...options)
+```
+
+### Install
+
+This command installs and links packages. Under the hood it is using either `pnpm-workspaces` if `workspaces` is set or `pnpm install` in each project.
+
+```bash
+buildable install (...options)
+```
+
 ### Run Script
 
 This command runs specified command for **each project** inside directory.
@@ -93,22 +111,6 @@ This command generates execution order in which projects should be run to avoid 
 
 ```bash
 buildable execution-order (eo) (...options)
-```
-
-### Init
-
-This command generates configuration files which allows modifications to be applied. It will also generate `pnpm-workspaces.yaml` file if `workspace` flag is set to true.
-
-```bash
-buildable init (...options)
-```
-
-### Install
-
-This command installs and links packages. Under the hood it is using either `pnpm-workspaces` if `workspaces` is set or `pnpm install` in each project.
-
-```bash
-buildable install (...options)
 ```
 
 #### Available options
