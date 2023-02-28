@@ -6,7 +6,7 @@
   ],
   "customCommands": {
     "install": {
-      "*": "npm i"
+      "*": "pnpm install"
     }
   }
 }
