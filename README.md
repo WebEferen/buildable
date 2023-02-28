@@ -1,8 +1,9 @@
 # Buildable
 
-![CI](https://github.com/webeferen/buildable/actions/workflows/ci.yml/badge.svg?branch=main)
-![Publish package](https://github.com/webeferen/buildable/actions/workflows/publish.yml/badge.svg?branch=main)
-[![Npm Version](https://badge.fury.io/js/@webeferen%2Fbuildable.svg)](https://badge.fury.io/js/@webeferen%2Fbuildable)
+![Tests](https://github.com/webeferen/buildable/actions/workflows/ci.yml/badge.svg?branch=main)
+[![Npm Version](https://img.shields.io/npm/v/@webeferen/buildable)](https://www.npmjs.com/package/@webeferen/buildable)
+[![Downloads](https://img.shields.io/npm/dm/@webeferen/buildable?label=Downloads)](https://www.npmjs.com/package/@webeferen/buildable)
+![License](https://img.shields.io/npm/l/@webeferen/buildable)
 
 Link your local repositories and dependencies quickly, without any additional knowledge.
 
@@ -12,6 +13,8 @@ Link your local repositories and dependencies quickly, without any additional kn
   - [Run Script](#run-script)
   - [Dependency Graph](#dependency-graph)
   - [Execution Order](#execution-order)
+- [Example Configuration](#example-configuration)
+- [Possible Issues](#possible-issues)
 - [Contributing](#contributing)
 - [License](#license)
 
