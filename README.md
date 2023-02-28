@@ -1,7 +1,9 @@
 # Buildable
 
-![CI](https://github.com/webeferen/buildable/actions/workflows/ci.yml/badge.svg?branch=main)
-![Publish package](https://github.com/webeferen/buildable/actions/workflows/publish.yml/badge.svg?branch=main)
+![Tests](https://github.com/webeferen/buildable/actions/workflows/ci.yml/badge.svg?branch=main)
+[![Npm Version](https://img.shields.io/npm/v/@webeferen/buildable)](https://www.npmjs.com/package/@webeferen/buildable)
+[![Downloads](https://img.shields.io/npm/dm/@webeferen/buildable?label=Downloads)](https://www.npmjs.com/package/@webeferen/buildable)
+![License](https://img.shields.io/npm/l/@webeferen/buildable)
 
 Link your local repositories and dependencies quickly, without any additional knowledge.
 
@@ -11,6 +13,8 @@ Link your local repositories and dependencies quickly, without any additional kn
   - [Run Script](#run-script)
   - [Dependency Graph](#dependency-graph)
   - [Execution Order](#execution-order)
+- [Example Configuration](#example-configuration)
+- [Possible Issues](#possible-issues)
 - [Contributing](#contributing)
 - [License](#license)
 
@@ -88,6 +92,10 @@ buildable execution-order (eo) (...options)
 - `--path (-p)` Relative path to the directory containing workspace (if any)
 - `--config (-c)` Relative path to the configuration file
 - `--reload (-r)` List of comma separated packages which can be manually reloaded
+
+## Example configuration
+
+Example configuration can be found [here](EXAMPLE.md).
 
 ## Possible issues
 
