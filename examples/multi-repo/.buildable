@@ -1,7 +1,0 @@
-{
-  "links": {
-    "package-b": [
-      "package-a"
-    ]
-  }
-}
