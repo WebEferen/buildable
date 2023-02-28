@@ -8,7 +8,8 @@
 Link your local repositories and dependencies quickly, without any additional knowledge.
 
 - [Installation](#installation)
-- [Usage](#usage)
+- [Getting Started](#getting-started)
+- [Commands](#commands)
   - [Help & Version](#help)
   - [Run Script](#run-script)
   - [Dependency Graph](#dependency-graph)
@@ -40,7 +41,17 @@ It can be also used via npx
 npx @webeferen/buildable [command]
 ```
 
-## Usage
+## Getting Started
+
+Buildable itself is a CLI tool that doesn't require any additional configuration to run successfully. To get the smoothest experience the recommended way is by doing following steps:
+
+- Call `buildable init` method to create metadata files;
+  - Modify `.buildable` to the state that fits the usecase;
+  - Modify `pnpm-workspaces.yaml` if needed - default is `packages/*`;
+- Run `buildable install` to make sure that every dependency is installed and linked;
+- Run desired commands by typing `buildable run XYZ`;
+
+## Commands
 
 ```bash
 buildable [command] (...options)
@@ -84,6 +95,22 @@ This command generates execution order in which projects should be run to avoid 
 buildable execution-order (eo) (...options)
 ```
 
+### Init
+
+This command generates configuration files which allows modifications to be applied. It will also generate `pnpm-workspaces.yaml` file if `workspace` flag is set to true.
+
+```bash
+buildable init (...options)
+```
+
+### Install
+
+This command installs and links packages. Under the hood it is using either `pnpm-workspaces` if `workspaces` is set or `pnpm install` in each project.
+
+```bash
+buildable install (...options)
+```
+
 #### Available options
 
 - `--listeners (-l)` List of comma separated texts when achieve next process can be run (regex check)
@@ -92,6 +119,7 @@ buildable execution-order (eo) (...options)
 - `--path (-p)` Relative path to the directory containing workspace (if any)
 - `--config (-c)` Relative path to the configuration file
 - `--reload (-r)` List of comma separated packages which can be manually reloaded
+- `--workspace (-w)` Sets buildable in workspace mode (default: true)
 
 ## Example configuration
 
