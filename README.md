@@ -2,6 +2,7 @@
 
 ![CI](https://github.com/webeferen/buildable/actions/workflows/ci.yml/badge.svg?branch=main)
 ![Publish package](https://github.com/webeferen/buildable/actions/workflows/publish.yml/badge.svg?branch=main)
+[![Npm Version](https://badge.fury.io/js/@webeferen%2Fbuildable.svg)](https://badge.fury.io/js/@webeferen%2Fbuildable)
 
 Link your local repositories and dependencies quickly, without any additional knowledge.
 
@@ -88,6 +89,10 @@ buildable execution-order (eo) (...options)
 - `--path (-p)` Relative path to the directory containing workspace (if any)
 - `--config (-c)` Relative path to the configuration file
 - `--reload (-r)` List of comma separated packages which can be manually reloaded
+
+## Example configuration
+
+Example configuration can be found [here](EXAMPLE.md).
 
 ## Possible issues
 
