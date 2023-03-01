@@ -122,6 +122,7 @@ buildable execution-order (eo) (...options)
 - `--config (-c)` Relative path to the configuration file
 - `--reload (-r)` List of comma separated packages which can be manually reloaded
 - `--workspace (-w)` Sets buildable in workspace mode (default: true)
+- `--save (-s)` Enables or disables safe mode for running without dependencies (default: true)
 
 ## Example configuration
 
