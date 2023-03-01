@@ -55,8 +55,6 @@
   },
   "homepage": "https://github.com/WebEferen/buildable#readme",
   "directories": {
-    "example": "examples",
-    "lib": "lib",
-    "test": "tests"
+    "lib": "lib"
   }
 }
