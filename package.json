@@ -24,6 +24,7 @@
     "format": "prettier . --write",
     "lint": "prettier . --check",
     "release": "changeset publish",
+    "version-packages": "changeset version",
     "changeset": "changeset"
   },
   "bin": {
