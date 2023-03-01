@@ -1,5 +1,11 @@
 # @webeferen/buildable
 
+## 1.3.4
+
+### Patch Changes
+
+- 64cbf88: Move pnpm from peer to dev dependencies
+
 ## 1.3.3
 
 ### Patch Changes
