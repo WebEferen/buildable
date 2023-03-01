@@ -23,6 +23,7 @@
     "test": "node ./bin/buildable.js run \"jasmine --config=jasmine.json\"",
     "format": "prettier . --write",
     "lint": "prettier . --check",
+    "release": "changeset publish",
     "changeset": "changeset"
   },
   "bin": {
