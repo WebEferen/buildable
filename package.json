@@ -38,6 +38,7 @@
     "concurrently": "^7.6.0",
     "dependency-graph": "^0.11.0",
     "glob": "^8.1.0",
+    "rxjs": "^7.8.0",
     "update-notifier": "^6.0.2",
     "yaml": "^2.2.1",
     "yargs": "^17.6.2"
