@@ -1,5 +1,11 @@
 # @webeferen/buildable
 
+## 1.3.2
+
+### Patch Changes
+
+- d01eea4: Removed update-notifier
+
 ## 1.3.1
 
 ### Patch Changes
