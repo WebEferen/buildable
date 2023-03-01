@@ -1,5 +1,11 @@
 # @webeferen/buildable
 
+## 1.3.3
+
+### Patch Changes
+
+- fa4ff24: Fix inverted condition
+
 ## 1.3.2
 
 ### Patch Changes
