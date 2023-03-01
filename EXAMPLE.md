@@ -35,6 +35,10 @@ Runs only selected packages (and their dependencies to be error-safe)
 
 > buildable run --only PACKAGE-A PACKAGE-B
 
+This command will run only selected packages with their dependencies. There is an option to run single package with unsafe mode - in order to do that, `--no-safe` flag needs to be applied. By default `safe` flag is set to true.
+
+> buildable run --only PACKAGE-A --no-safe
+
 ### Exclude
 
 Exclude packages from run (without dependencies)
