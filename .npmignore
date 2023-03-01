@@ -1,6 +1,9 @@
 .npmrc
 .gitignore
 .prettierignore
+.changeset
+.github
+
 jasmine.json
 
 examples
