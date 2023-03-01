@@ -22,7 +22,10 @@
   "scripts": {
     "test": "node ./bin/buildable.js run \"jasmine --config=jasmine.json\"",
     "format": "prettier . --write",
-    "lint": "prettier . --check"
+    "lint": "prettier . --check",
+    "release": "changeset release",
+    "version": "changeset version",
+    "changeset": "changeset"
   },
   "bin": {
     "buildable": "bin/buildable.js"
@@ -33,6 +36,7 @@
     "url": "git+https://github.com/WebEferen/buildable.git"
   },
   "dependencies": {
+    "@changesets/cli": "^2.26.0",
     "@manypkg/get-packages": "^1.1.3",
     "chalk": "5.2.0",
     "concurrently": "^7.6.0",
