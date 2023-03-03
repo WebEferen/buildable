@@ -1,10 +1,4 @@
 {
   "name": "single-repo",
-  "version": "1.0.0",
-  "scripts": {
-    "start": "buildable run \"node lib/index.js\""
-  },
-  "devDependencies": {
-    "@webeferen/buildable": "^0.6.1"
-  }
+  "version": "1.0.0"
 }
