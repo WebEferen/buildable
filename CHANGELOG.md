@@ -1,5 +1,11 @@
 # @webeferen/buildable
 
+## 1.4.0
+
+### Minor Changes
+
+- 18c9dc7: Better initialize
+
 ## 1.3.4
 
 ### Patch Changes
