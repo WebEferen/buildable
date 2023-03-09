@@ -24,6 +24,8 @@ Link your local repositories and dependencies quickly, without any additional kn
 ## Installation
 
 Buildable is made to work with each of installation type such as local, global and npx.
+It is using [pnpm](https://pnpm.io) to install and manage dependencies.
+Use `.npmrc` file to configure this package manager.
 
 Local scope
 
@@ -122,7 +124,7 @@ buildable execution-order (eo) (...options)
 - `--config (-c)` Relative path to the configuration file
 - `--reload (-r)` List of comma separated packages which can be manually reloaded
 - `--workspace (-w)` Sets buildable in workspace mode (default: true)
-- `--save (-s)` Enables or disables safe mode for running without dependencies (default: true)
+- `--no-safe` Disables safe mode for running without dependencies
 
 ## Example configuration
 
