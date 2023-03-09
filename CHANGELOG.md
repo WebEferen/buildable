@@ -1,5 +1,11 @@
 # @webeferen/buildable
 
+## 1.4.2
+
+### Patch Changes
+
+- dbdf8ba: Fixed stopping of process
+
 ## 1.4.1
 
 ### Patch Changes
